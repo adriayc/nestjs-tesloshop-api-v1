@@ -16,6 +16,19 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
             $ yarn remove prettier eslint-config-prettier eslint-plugin-prettier
 
+    - Postgres (Docker)
+        + Run commands
+            $ docker compose up -d          // Construir, re-crear e iniciar todo los servicios
+
+    - TablePlus
+        + Create new connection for Postgres DB (Click '+' | New Connection)
+            > Name: Teslo Shop API
+            > PostgreSQL
+            > DB host/socket: localhost                 > Post: 5432 (by default) 
+            > DB's user: postgres (by default)          > Password: {{POSTGRES_PASSWORD}} (.env file)
+            > DB's name: {{POSTGRES_DB}} (.env file)
+            CLick 'Test' | 'Save' | 'Connect'
+
     - Postman
         + Crete a new Workspace (Click "New" | "Workspace" > "Blank workspace")
             > Name: "Ax2CDev"
