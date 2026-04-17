@@ -12,3 +12,7 @@ Docker es una plataforma que permite crear, empaquetar y ejecutar aplicaciones e
 ## PostgreSQL
 
 PostgreSQL (Postgres) es un sistema de gestión de bases de datos relacional, de código abierto y muy potente.
+
+### TypeORM
+
+TypeORM es una herramienta (ORM) que permite interactuar con bases de datos usando objetos y clases en lugar de escribir SQL directamente.

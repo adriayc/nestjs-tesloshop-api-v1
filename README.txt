@@ -12,6 +12,12 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
         $ yarn run start                // Development
         $ yarn run start:dev            // Watch mode
 
+    - Agregar dependencias
+        -  Environment vars
+            $ yarn add @nestjs/config
+        - TypeORM (Postgres)
+            $ yarn add @nestjs/typeorm typeorm pg
+
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
             $ yarn remove prettier eslint-config-prettier eslint-plugin-prettier
