@@ -22,6 +22,12 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
             $ yarn remove prettier eslint-config-prettier eslint-plugin-prettier
 
+    - Nest CLI
+        + Crear un nuevo resource (sin archivos de test)
+            $ nest g res products --no-spec
+                > ? What transport layer do you use? REST API
+                > ? Would you like to generate CRUD entry points? (Y/n) y
+
     - Postgres (Docker)
         + Run commands
             $ docker compose up -d          // Construir, re-crear e iniciar todo los servicios
