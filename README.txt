@@ -57,8 +57,11 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 - Create Product
                     > POST: http://localhost:3000/api/products                      Click "Send"
                         > Body | raw (JSON)
-                            { 
-                                name: "Honda" 
+                            {
+                                "title": "Adriano's shirt",
+                                "sizes": ["SM", "M", "L"],
+                                "gender": "men",
+                                "slug": "adrianos_shirt"
                             }
 
 * VSCODE
