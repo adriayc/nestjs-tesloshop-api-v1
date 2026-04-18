@@ -19,6 +19,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add @nestjs/typeorm typeorm pg
         - Class-Validator and Class-Transformer
             $ yarn add class-validator class-transformer
+        - UUID
+            $ yarn add uuid
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
