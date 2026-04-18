@@ -63,6 +63,12 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "gender": "men",
                                 "price": 151.99
                             }
+                - Get All Products
+                    > GET: http://localhost:3000/api/products                       Click "Send"
+                - Get One Product
+                    > GET: http://localhost:3000/api/products/{{UUID}}              Click "Send"
+                - Delete Product
+                    > DELETE: http://localhost:3000/api/products/{{UUID}}           Click "Send"
 
 * VSCODE
     - Shortcuts
