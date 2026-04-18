@@ -29,6 +29,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ nest g res products --no-spec
                 > ? What transport layer do you use? REST API
                 > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo module
+            $ nest g mo common
 
     - Postgres (Docker)
         + Run commands
@@ -55,7 +57,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 > GET: http://localhost:3000                                Click 'Send'
             * Product (Click "..." > Add folder > Name: "Product")
                 - Create Product
-                    > POST: http://localhost:3000/api/products                      Click "Send"
+                    > POST: http://localhost:3000/api/products                                      Click "Send"
                         > Body | raw (JSON)
                             {
                                 "title": "Adriano's shirt",
@@ -64,11 +66,12 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "price": 151.99
                             }
                 - Get All Products
-                    > GET: http://localhost:3000/api/products                       Click "Send"
+                    > GET: http://localhost:3000/api/products                                       Click "Send"
+                    > GET: http://localhost:3000/api/products?limit=10&offset=0                     Click "Send"
                 - Get One Product
-                    > GET: http://localhost:3000/api/products/{{UUID}}              Click "Send"
+                    > GET: http://localhost:3000/api/products/{{UUID}}                              Click "Send"
                 - Delete Product
-                    > DELETE: http://localhost:3000/api/products/{{UUID}}           Click "Send"
+                    > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
 
 * VSCODE
     - Shortcuts
