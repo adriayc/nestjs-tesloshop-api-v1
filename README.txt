@@ -72,6 +72,13 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                     > GET: http://localhost:3000/api/products?limit=10&offset=0                     Click "Send"
                 - Get One Product
                     > GET: http://localhost:3000/api/products/{{UUID}}                              Click "Send"
+                - Update Product
+                    > PATCH: http://localhost:3000/api/products/{{UUID}}                            Click "Send"
+                        > Body | raw (JSON)
+                            {
+                                "price": 200.99,
+                                "title": "Adriano's shirtN10"
+                            }
                 - Delete Product
                     > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
 
