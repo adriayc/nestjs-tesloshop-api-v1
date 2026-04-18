@@ -17,6 +17,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add @nestjs/config
         - TypeORM (Postgres)
             $ yarn add @nestjs/typeorm typeorm pg
+        - Class-Validator and Class-Transformer
+            $ yarn add class-validator class-transformer
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
@@ -51,6 +53,13 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
         + HTTP requests
             * TEST
                 > GET: http://localhost:3000                                Click 'Send'
+            * Product (Click "..." > Add folder > Name: "Product")
+                - Create Product
+                    > POST: http://localhost:3000/api/products                      Click "Send"
+                        > Body | raw (JSON)
+                            { 
+                                name: "Honda" 
+                            }
 
 * VSCODE
     - Shortcuts
