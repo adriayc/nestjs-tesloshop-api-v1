@@ -61,7 +61,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "title": "Adriano's shirt",
                                 "sizes": ["SM", "M", "L"],
                                 "gender": "men",
-                                "slug": "adrianos_shirt"
+                                "price": 151.99
                             }
 
 * VSCODE
