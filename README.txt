@@ -65,7 +65,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "title": "Adriano's shirt",
                                 "sizes": ["SM", "M", "L"],
                                 "gender": "men",
-                                "price": 151.99
+                                "price": 151.99,
+                                "tags": ["shirt", "shirt2"]
                             }
                 - Get All Products
                     > GET: http://localhost:3000/api/products                                       Click "Send"
@@ -77,7 +78,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                         > Body | raw (JSON)
                             {
                                 "price": 200.99,
-                                "title": "Adriano's shirtN10"
+                                "title": "Adriano's shirtN10",
+                                "tags": ["shirt", "shirt2", "shirt3"]
                             }
                 - Delete Product
                     > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
