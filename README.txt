@@ -67,6 +67,10 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "gender": "men",
                                 "price": 151.99,
                                 "tags": ["shirt", "shirt2"]
+                                "images": [
+                                    "http://image1.jpg",
+                                    "http://image2.jpg"
+                                ]
                             }
                 - Get All Products
                     > GET: http://localhost:3000/api/products                                       Click "Send"
