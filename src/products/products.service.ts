@@ -103,11 +103,34 @@ export class ProductsService {
 
     // Create query runner
     const queryRunner = this.dataSource.createQueryRunner();
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
 
     try {
-      await this.productRepository.save(product);
-      return product;
+      if (images) {
+        // Eliminar las imagenes anteriors
+        await queryRunner.manager.delete(ProductImage, { product: { id } });
+
+        product.images = images.map((image) =>
+          this.productImageRepository.create({ url: image }),
+        );
+      } /*else {
+        product.images = await this.productImageRepository.findBy({
+          product: { id },
+        });
+      }*/
+      // await this.productRepository.save(product);
+      await queryRunner.manager.save(product);
+
+      await queryRunner.commitTransaction(); // Confirmar los cambios
+      await queryRunner.release(); // Liberar la conexión
+
+      // return product;
+      return this.findOnePlain(id);
     } catch (error) {
+      await queryRunner.rollbackTransaction(); // Deshacer todos los cambios
+      await queryRunner.release(); // Liberar la conexión
+
       this.handleDBExceptions(error);
     }
   }
