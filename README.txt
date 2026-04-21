@@ -33,6 +33,10 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 > ? Would you like to generate CRUD entry points? (Y/n) y
         + Crear un nuevo module
             $ nest g mo common
+        + Crear un nuevo resource (sin archivos de test)
+            $ nest g res seed --no-spec
+                > ? What transport layer do you use? REST API
+                > ? Would you like to generate CRUD entry points? (Y/n) y
 
     - Postgres (Docker)
         + Run commands
@@ -87,6 +91,11 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             }
                 - Delete Product
                     > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
+            * SEED (Click "..." > Add folder > Name: "SEED")
+                - Execute Seed
+                    > POST: http://localhost:3000/api/seed                                          Click "Send"
+                        > Body | raw (JSON)
+                            { }
 
 * VSCODE
     - Shortcuts
