@@ -21,6 +21,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add class-validator class-transformer
         - UUID
             $ yarn add uuid
+        - Multer types
+            $ yarn add -D @types/multer
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
@@ -35,6 +37,10 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ nest g mo common
         + Crear un nuevo resource (sin archivos de test)
             $ nest g res seed --no-spec
+                > ? What transport layer do you use? REST API
+                > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo resource (sin archivos de prueba)
+            $ nest g res files --no-spec
                 > ? What transport layer do you use? REST API
                 > ? Would you like to generate CRUD entry points? (Y/n) y
 
@@ -96,6 +102,12 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                     > POST: http://localhost:3000/api/seed                                          Click "Send"
                         > Body | raw (JSON)
                             { }
+            * Upload (Click "..." > Add folder > Name: "Upload")
+                - Upload Product Image
+                    > POST: http://localhost:3000/api/files/products                                Click "Send"
+                        > Body | Multipart Form
+                            Key             Value
+                            file > File     {{Select File}}
 
 * VSCODE
     - Shortcuts
