@@ -141,6 +141,18 @@ export class ProductsService {
     await this.productRepository.remove(product);
   }
 
+  // Only development
+  async deleteAllProduct() {
+    const query = this.productRepository.createQueryBuilder('product');
+
+    try {
+      // Eliminar todos los productos
+      return await query.delete().where({}).execute();
+    } catch (error) {
+      this.handleDBExceptions(error);
+    }
+  }
+
   private handleDBExceptions(error: any) {
     // console.log(error);
     if (error.code === '23505') throw new BadRequestException(error.detail);
