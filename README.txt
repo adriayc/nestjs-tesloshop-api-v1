@@ -112,7 +112,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                         > Body | Multipart Form
                             Key             Value
                             file > File     {{Select File}}
-                - Get Image Name
+                - Get Image By Name
                     > GET: http://localhost:3000/api/files/products/{{IMAGE_NAME}}                  Click "Send"
 
 * VSCODE
