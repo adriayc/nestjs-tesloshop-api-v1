@@ -25,6 +25,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add -D @types/multer
         - UUID
             $ yarn add uuid
+        - Serve static content
+            $ yarn add @nestjs/serve-static
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
