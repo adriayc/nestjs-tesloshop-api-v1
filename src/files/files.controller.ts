@@ -1,3 +1,4 @@
+import { diskStorage } from 'multer';
 import {
   BadRequestException,
   Controller,
@@ -17,6 +18,11 @@ export class FilesController {
   @UseInterceptors(
     FileInterceptor('file', {
       fileFilter: fileFilter,
+      // limits: { fileSize: 100 },
+      // NOTA: No recomendado guardar en filesystem
+      storage: diskStorage({
+        destination: './static/uploads',
+      }),
     }),
   )
   uploadProductImage(@UploadedFile() file: Express.Multer.File) {
