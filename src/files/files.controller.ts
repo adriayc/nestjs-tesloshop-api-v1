@@ -1,8 +1,12 @@
+import type { Response } from 'express';
 import { diskStorage } from 'multer';
 import {
   BadRequestException,
   Controller,
+  Get,
+  Param,
   Post,
+  Res,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
@@ -31,6 +35,18 @@ export class FilesController {
       throw new BadRequestException('Make sure that the file is an image');
     }
 
-    return { fileName: file.originalname };
+    const secureUrl = `${file.filename}`;
+
+    return { secureUrl };
+  }
+
+  @Get('product/:imageName')
+  findProductImage(
+    @Res() res: Response, // Custom response
+    @Param('imageName') imageName: string,
+  ) {
+    const path = this.filesService.getStaticProductImage(imageName);
+
+    res.sendFile(path);
   }
 }
