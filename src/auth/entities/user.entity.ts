@@ -1,3 +1,4 @@
+import { KeyObject } from 'crypto';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
@@ -10,7 +11,9 @@ export class User {
   })
   email: string;
 
-  @Column('text')
+  @Column('text', {
+    select: false, // Attribute no seleccionanda en las queries "find"
+  })
   password: string;
 
   @Column('text')

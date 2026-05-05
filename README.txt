@@ -130,6 +130,13 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                                 "password": "secret123",
                                 "fullName": "adriano ayala"
                             }
+                - Login User
+                    > POST: http://localhost:3000/api/auth/login                                    Click "Send"
+                        > Body | raw (JSON)
+                            {
+                                "email": "adriano@mail.com",
+                                "password": "secret123",
+                            }
 
 * VSCODE
     - Shortcuts
