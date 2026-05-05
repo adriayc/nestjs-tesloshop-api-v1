@@ -47,6 +47,10 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ nest g res files --no-spec
                 > ? What transport layer do you use? REST API
                 > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo resource (sin archivos de prueba)
+            $ nest g res auth --no-spec
+                > ? What transport layer do you use? REST API
+                > ? Would you like to generate CRUD entry points? (Y/n) y
 
     - Postgres (Docker)
         + Run commands
