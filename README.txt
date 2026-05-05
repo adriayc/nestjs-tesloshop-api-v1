@@ -118,6 +118,15 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             file > File     {{Select File}}
                 - Get Image By Name
                     > GET: http://localhost:3000/api/files/products/{{IMAGE_NAME}}                  Click "Send"
+            * User (Click "..." > Add folder > Name: "User")
+                - Create User
+                    > POST: http://localhost:3000/api/auth/register                                 Click "Send"
+                        > Body | raw (JSON)
+                            {
+                                "email": "adriano@mail.com",
+                                "password": "secret123",
+                                "fullName": "adriano ayala"
+                            }
 
 * VSCODE
     - Shortcuts
