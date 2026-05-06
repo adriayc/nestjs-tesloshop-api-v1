@@ -30,6 +30,10 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
         - BCrypt
             $ yarn add bcrypt
             $ yarn add -D @types/bcrypt
+        - Passport (authentication)
+            $ yarn add @nestjs/passport passport
+            $ yarn add @nestjs/jwt passport-jwt
+            $ yarn add -D @types/passport-jwt
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
