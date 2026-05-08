@@ -58,6 +58,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ nest g res auth --no-spec
                 > ? What transport layer do you use? REST API
                 > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo guard (sin archivos de test)
+            $ nest g gu auth/guards/userRole --no-spec
 
     - Postgres (Docker)
         + Run commands
@@ -143,6 +145,9 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             }
                 - Route Private
                     > GET: http://localhost:3000/api/auth/private                                   Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
+                - Route Private 2
+                    > GET: http://localhost:3000/api/auth/private2                                  Click "Send"
                         > Auth > Type: {{BEARER_TOKEN}}
 
 * VSCODE
