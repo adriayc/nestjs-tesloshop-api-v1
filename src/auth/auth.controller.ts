@@ -1,8 +1,16 @@
-import { Controller, Post, Body, Get, UseGuards, Req } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  UseGuards,
+  // Req,
+  Headers,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { CreateUserDto, LoginUserDto } from './dto';
-import { GetUser } from './decorators/get-user.decorator';
+import { GetUser, RawHeaders } from './decorators';
 import { User } from './entities/user.entity';
 
 @Controller('auth')
@@ -22,18 +30,24 @@ export class AuthController {
   @Get('private')
   @UseGuards(AuthGuard('jwt'))
   testingPrivateRoute(
-    // @Req() request: Express.Request
+    // @Req() request: Express.Request,
     @GetUser() user: User,
-    // @GetUser('email') user: string,
+    @GetUser('email') userEmail: string,
     // @GetUser(['email', 'role', 'fullName']) user: string[],
+
+    @RawHeaders() rawHeaders: string[],
+    @Headers() headers: Record<string, string>,
   ) {
-    // console.log({ user: request.user });
+    // console.log(request);
     // console.log(user);
 
     return {
       ok: true,
       message: 'Private route!!!',
       user,
+      userEmail,
+      rawHeaders,
+      headers,
     };
   }
 }
