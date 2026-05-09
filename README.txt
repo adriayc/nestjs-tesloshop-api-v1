@@ -60,6 +60,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 > ? Would you like to generate CRUD entry points? (Y/n) y
         + Crear un nuevo guard (sin archivos de test)
             $ nest g gu auth/guards/userRole --no-spec
+        + Crear un nuevo decorator (sin archivos de test y no genera un folder)
+            $ nest g d auth/decorators/roleProtected --no-spec --flat
 
     - Postgres (Docker)
         + Run commands
