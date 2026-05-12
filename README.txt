@@ -151,6 +151,9 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 - Route Private 2
                     > GET: http://localhost:3000/api/auth/private2                                  Click "Send"
                         > Auth > Type: {{BEARER_TOKEN}}
+                - Route Private 3
+                    > GET: http://localhost:3000/api/auth/private3                                  Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
 
 * VSCODE
     - Shortcuts
