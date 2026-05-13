@@ -89,6 +89,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             * Product (Click "..." > Add folder > Name: "Product")
                 - Create Product
                     > POST: http://localhost:3000/api/products                                      Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
                         > Body | raw (JSON)
                             {
                                 "title": "Adriano's shirt",
@@ -108,6 +109,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                     > GET: http://localhost:3000/api/products/{{UUID}}                              Click "Send"
                 - Update Product
                     > PATCH: http://localhost:3000/api/products/{{UUID}}                            Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
                         > Body | raw (JSON)
                             {
                                 "price": 200.99,
@@ -116,6 +118,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             }
                 - Delete Product
                     > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
             * SEED (Click "..." > Add folder > Name: "SEED")
                 - Execute Seed
                     > POST: http://localhost:3000/api/seed                                          Click "Send"
