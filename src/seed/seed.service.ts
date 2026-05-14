@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { ProductsService } from 'src/products/products.service';
 import { initialData } from './data/seed-data';
 import { User } from 'src/auth/entities/user.entity';
+import bcrypt from 'bcrypt';
 
 @Injectable()
 export class SeedService {
@@ -36,7 +37,13 @@ export class SeedService {
     const users: User[] = [];
 
     seedUsers.forEach((user) => {
-      users.push(this.userRepository.create(user));
+      const { password, ...rest } = user;
+      users.push(
+        this.userRepository.create({
+          ...rest,
+          password: bcrypt.hashSync(password, 10),
+        }),
+      );
     });
 
     const dbUsers = await this.userRepository.save(users);
