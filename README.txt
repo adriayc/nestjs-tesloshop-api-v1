@@ -34,6 +34,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add @nestjs/passport passport
             $ yarn add @nestjs/jwt passport-jwt
             $ yarn add -D @types/passport-jwt
+        - OpenAPI (Swagger)
+            $ yarn add @nestjs/swagger
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
@@ -171,6 +173,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 - Select collection | "View complete documentation ->" > Click 'Publish' > Click 'Publish'
                     > Copy 'URL for published documentation'
                     > Open the URL in your browser
+        * OpenAPI (Swagger)
 
 * VSCODE
     - Shortcuts

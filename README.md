@@ -9,6 +9,10 @@ Está inspirado en la arquitectura de Angular, pero para el servidor.
 
 Passport is the most popular node.js authentication library, well-known by the community and successfully used in many production applications.
 
+### OpenAPI
+
+OpenAPI se refire normalmente a la integración de la especificación _OPENAPI Specification_ usando _Swagger_ para generar documentación automática e interactiva de tu API REST.
+
 ## Docker
 
 Docker es una plataforma que permite crear, empaquetar y ejecutar aplicaciones en contenedores, asegurando que funcionen igual en cualquier entorno.
