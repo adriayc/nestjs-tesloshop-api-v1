@@ -161,6 +161,17 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                     > GET: http://localhost:3000/api/auth/check-status                              Click "Send"
                         > Auth > Type: {{BEARER_TOKEN}}
 
+    - Documentación
+        + Postman
+            * Export
+                - Select collection "nestjs-tesloshop-api" > click '...' | More | Export
+                    > Export as: Collection v2.1
+                    Click "Export JSON"
+            * View Documentation
+                - Select collection | "View complete documentation ->" > Click 'Publish' > Click 'Publish'
+                    > Copy 'URL for published documentation'
+                    > Open the URL in your browser
+
 * VSCODE
     - Shortcuts
         + Recargar la ventana (CTRL + SHIFT + P > Search..."Developer: Reload Window")
