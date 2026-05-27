@@ -34,6 +34,8 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add @nestjs/passport passport
             $ yarn add @nestjs/jwt passport-jwt
             $ yarn add -D @types/passport-jwt
+        - OpenAPI (Swagger)
+            $ yarn add @nestjs/swagger
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
@@ -160,6 +162,18 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                 - Check Auth Status
                     > GET: http://localhost:3000/api/auth/check-status                              Click "Send"
                         > Auth > Type: {{BEARER_TOKEN}}
+
+    - Documentación
+        + Postman
+            * Export
+                - Select collection "nestjs-tesloshop-api" > click '...' | More | Export
+                    > Export as: Collection v2.1
+                    Click "Export JSON"
+            * View Documentation
+                - Select collection | "View complete documentation ->" > Click 'Publish' > Click 'Publish'
+                    > Copy 'URL for published documentation'
+                    > Open the URL in your browser
+        * OpenAPI (Swagger)
 
 * VSCODE
     - Shortcuts
