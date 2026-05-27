@@ -1,0 +1,46 @@
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { User } from './entities/user.entity';
+import { JwtStrategy } from './strategies/jwt.strategy';
+
+@Module({
+  controllers: [AuthController],
+  providers: [AuthService, JwtStrategy],
+  imports: [
+    ConfigModule,
+    // TypeORM module for product entity
+    TypeOrmModule.forFeature([User]),
+    // Passport module (with auth strategy)
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    // Jwt module
+    // JwtModule.register({
+    //   secret: process.env.JWT_SECRET,
+    //   signOptions: {
+    //     expiresIn: '2h',
+    //   },
+    // }),
+    // Jwt module (asynchronous)
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        // console.log('JWT SECRET:', process.env.JWT_SECRET);
+        // console.log('JWT secret:', configService.get('JWT_SECRET'));
+        return {
+          // secret: process.env.JWT_SECRET,
+          secret: configService.get('JWT_SECRET'),
+          signOptions: {
+            expiresIn: '2h',
+          },
+        };
+      },
+    }),
+  ],
+  exports: [TypeOrmModule, JwtStrategy, PassportModule, JwtModule],
+})
+export class AuthModule {}

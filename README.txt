@@ -27,6 +27,13 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ yarn add uuid
         - Serve static content
             $ yarn add @nestjs/serve-static
+        - BCrypt
+            $ yarn add bcrypt
+            $ yarn add -D @types/bcrypt
+        - Passport (authentication)
+            $ yarn add @nestjs/passport passport
+            $ yarn add @nestjs/jwt passport-jwt
+            $ yarn add -D @types/passport-jwt
 
     - Eliminar dependencias
         + Pritter, Eslint-Config-Prettier Eslint-Plugin-Prettier (optional)
@@ -47,6 +54,14 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             $ nest g res files --no-spec
                 > ? What transport layer do you use? REST API
                 > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo resource (sin archivos de prueba)
+            $ nest g res auth --no-spec
+                > ? What transport layer do you use? REST API
+                > ? Would you like to generate CRUD entry points? (Y/n) y
+        + Crear un nuevo guard (sin archivos de test)
+            $ nest g gu auth/guards/userRole --no-spec
+        + Crear un nuevo decorator (sin archivos de test y no genera un folder)
+            $ nest g d auth/decorators/roleProtected --no-spec --flat
 
     - Postgres (Docker)
         + Run commands
@@ -74,6 +89,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
             * Product (Click "..." > Add folder > Name: "Product")
                 - Create Product
                     > POST: http://localhost:3000/api/products                                      Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
                         > Body | raw (JSON)
                             {
                                 "title": "Adriano's shirt",
@@ -93,6 +109,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                     > GET: http://localhost:3000/api/products/{{UUID}}                              Click "Send"
                 - Update Product
                     > PATCH: http://localhost:3000/api/products/{{UUID}}                            Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
                         > Body | raw (JSON)
                             {
                                 "price": 200.99,
@@ -101,6 +118,7 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             }
                 - Delete Product
                     > DELETE: http://localhost:3000/api/products/{{UUID}}                           Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
             * SEED (Click "..." > Add folder > Name: "SEED")
                 - Execute Seed
                     > POST: http://localhost:3000/api/seed                                          Click "Send"
@@ -114,6 +132,34 @@ TESLO-SHOP API (NestJS, Postgres with TypeORM, JWT and OpenAPI with Swagger)
                             file > File     {{Select File}}
                 - Get Image By Name
                     > GET: http://localhost:3000/api/files/products/{{IMAGE_NAME}}                  Click "Send"
+            * User (Click "..." > Add folder > Name: "User")
+                - Create User
+                    > POST: http://localhost:3000/api/auth/register                                 Click "Send"
+                        > Body | raw (JSON)
+                            {
+                                "email": "adriano@mail.com",
+                                "password": "secret123",
+                                "fullName": "adriano ayala"
+                            }
+                - Login User
+                    > POST: http://localhost:3000/api/auth/login                                    Click "Send"
+                        > Body | raw (JSON)
+                            {
+                                "email": "adriano@mail.com",
+                                "password": "secret123",
+                            }
+                - Route Private
+                    > GET: http://localhost:3000/api/auth/private                                   Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
+                - Route Private 2
+                    > GET: http://localhost:3000/api/auth/private2                                  Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
+                - Route Private 3
+                    > GET: http://localhost:3000/api/auth/private3                                  Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
+                - Check Auth Status
+                    > GET: http://localhost:3000/api/auth/check-status                              Click "Send"
+                        > Auth > Type: {{BEARER_TOKEN}}
 
 * VSCODE
     - Shortcuts
